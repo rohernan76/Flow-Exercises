@@ -21,59 +21,68 @@
                 7. If the player's last play was a number (not a letter), the player's score is multiplied by that amount.
         */
         
-        //Player Two
-        var score = 394;
-        var last_play = "W";
-        var broom = "none";
+    
+        //Player Three
+        var score = "f";
+        var last_play = 1.5;
+        var broom = "brush";
         var has_ball = true;
-        var is_in_tree = true;
-        var crying = false;
+        var is_in_tree = false;
+        var crying = true;
         
-
+        
         // Rule 1: A player's score is equal to 500 if their score is not already a number. (this is implemented below).
+        // var score = 394;
         if (typeof(score) != "number") {
             score = 500;
             console.log(score);
+        /* = 500 */
         }
 
         //Rule 2: A player's score is reduced by 300 if they are crying. Otherwise it is increased by 50.
-        // var crying = false;
+        // var crying = true;
         if (crying) {
             score = score - 300;
             console.log(score);
         } else {
             score = score + 50;
             console.log(score);
+        /* = 500 - 300 = 200 */
         }
 
         //Rule 3: A player's score is reduced by 77 if their last play was "Q"
-        // var last_play = "W";
-        if (last_play) {
+        // var last_play = 1.5;
+        if (typeof(last_play) === "Q") { 
             score = score - 77;
             console.log(score);
         } else {
             score = score + 0
+        /* = 200 + 0 = 200 */
         }
 
         //Rule 4: A player gets an extra 395 points if they are in a tree, unless their last play was a number.
-        // var last_play = "W";
-        // var is_in_tree = true;
-        if (is_in_tree && (typeof(last_play) == "number")) {
+        // var last_play = 1.5;
+        // var is_in_tree = false;
+        if (is_in_tree) {
             score = score + 395;
+        } else if (typeof(last_play) == "number") {
+            score = score + 0;
             console.log(score);
+        /* = 200 + 0 = 200 */
         } else {
             score = score + 0;
             console.log(score);
         }
 
         //Rule 5: A player's score is doubled if they are holding the broom handle, but it is tripled if they have the broom brush. Otherwise the player's score is halved.
-        // var broom = "none";
-        if (broom) {
+        // var broom = "brush";
+        if (typeof(broom) == "handle") { 
             score = score * 2;
             console.log(score);
-        } else if (typeof(broom) != "none") {
+        } else if (broom == "brush") {
             score = score * 3;
             console.log(score);
+        /* = 200 * 3 = 600 */
         } else {
             score = score * .5
             console.log(score)
@@ -81,19 +90,21 @@
         
         //Rule 6: A player's score is multiplied by 1.5 if they are carrying the ball but only if they are not in a tree. Disregard this rule if the player is crying
         // var has_ball = true;
-        // var is_in_tree = true;
-        if (has_ball && typeof (is_in_tree) != true) {
+        // var is_in_tree = false;
+        // var crying = true;
+        if (has_ball && (is_in_tree) == false) {
             score = score * 1.5;
+            console.log(score);
         } else if (crying); {
-            score = score + 0
+            score = score + 0;
         }
         
         //Rule 7: If the player's last play was a number (not a letter), the player's score is multiplied by that amount.
-        // var last_play = "W";
+        // var last_play = 1.5;
         if (last_play === "number"); {
             score = score * "number";
         }
-        
+
     </script>
 </body>
 </html>
