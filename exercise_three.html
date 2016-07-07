@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript | Flow | Three</title>
+</head>
+<body>
+    <script>
+        
+        var player1Score = prompt("Player 1 Score:");
+        var player2Score = prompt("Player 2 Score:");
+        
+        /*
+            Todo: Print out who is winning (higher score).
+        */
+        
+        /*var input_num = prompt("What's the temperature?");
+        
+        if (input_num < 30) {
+            console.log("It's really cold.");
+        } else if (input_num < 50) {
+            console.log("It's pretty chilly.");
+        } else if (input_num <= 70) {
+            console.log("It's warm.");
+        } else if (input_num > 70) {
+            console.log("It's hot!")
+        } */
+
+/* One option: */
+        if (player1Score == player2Score) {
+        	console.log("Tie!!");
+        } else if (player1Score < player2Score) {
+        	console.log("Player 2 is winning"); 
+        } else {
+        	console.log("player 1 won!");
+        }
+
+/* Another option: */
+        if (player1Score > player2Score) {
+        	console.log("Player 1 is winning");
+        } else if (player1Score < player2Score) {
+        	console.log("Player 2 is winning"); 
+        } else {
+        	console.log("It's a tie!!");
+        }
+
+
+    </script>
+</body>
+</html>
